@@ -1,0 +1,76 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    {% if heading %}
+    <h3 class="mx-2 bold">{{heading}}</h3>
+    {% endif %}
+
+    <div class="container border border-secondary ml-2 my-2 p-3 ">
+        <h5 class="my-2 bold">New Post</h5>
+        <h5 class="my-2" id="message"></h5>
+        <textarea id="new-post-body" cols="160" rows="4"></textarea>
+        {% if request.user.is_authenticated %}
+        <button type="button" id="new-post-btn" class="btn btn-primary mt-2">Post</button>
+        {% else %}
+        <h5 >Make sure You are <strong>Logged In</strong> to create a Post.</h5>
+        {% endif %}
+        </div>
+
+    {% for post in page_obj %}
+
+        <div class="container border border-secondary ml-2 my-2 p-3 ">
+            <h5 class="bold"><a class="usr" href="{% url 'user' post.user %}">{{post.user}}</a></h5>
+            <div id="edit-sec{{post.id}}">
+                {% if request.user.username == post.user %}
+                <button class="edit-btn p-0" id="{{post.id}}" onClick="edit(this.id)">Edit</button>
+                {% endif %}
+                <h5 id="post-body{{post.id}}">{{post.body}}</h5>
+            </div>
+            <h6>{{post.timestamp}}</h6>
+            <div class="d-flex">
+                {% if request.user.is_authenticated %}
+                    {% if post.is_liked %}
+                    <button id="like{{post.id}}" value="unlike" class="btn m-0 p-0  border-0" onclick="like(this.id,this.value)"><i class="fa-solid fa-heart heart"></i></button>
+                    {% else %}
+                    <button id="like{{post.id}}" value="like" class="btn m-0 p-0 border-0" onclick="like(this.id,this.value)"><i class="fa-regular fa-heart heart"></i></button>
+                    {% endif %}
+                    <h6 id="likes{{post.id}}" class="mx-1 pt-2">{{post.likes}}</h6>
+                {% else %}
+                <h5>No. of likes: {{post.likes}} </h5>
+                {% endif %}
+            </div>
+
+        </div>
+
+    {% empty %}
+    <h4 class="my-4 mx-2">Nothing To Show..</h4>
+    {% endfor %}
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+              </li>
+            {% endif %}
+    
+            <li class="page-item">
+                <h5 class="my-2 mx-2">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} </h5>
+            </li>
+    
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+              </li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+
+{% endblock %}
+
+{% block script %}
+{% load static %}
+    <script src="{% static 'network/index.js' %}"></script>
+{% endblock %}

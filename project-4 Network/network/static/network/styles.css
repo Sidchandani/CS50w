@@ -1,0 +1,52 @@
+.bold{
+font-weight: bold;
+}
+a.usr{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(86,84,84);
+    text-decoration: none;
+}
+.container{
+    max-width: 99%;
+    width: 1500px;
+}
+
+/* Edit */
+.edit-btn{
+    background-color: white;
+    border: none;
+    color: blue;
+}
+.edit-btn:hover{
+    color: rgb(95, 168, 180);
+}
+
+/* Follow */
+#flw-btn{
+    scale: .85;
+}
+.Follow{
+    background-color: #007bff;
+    color: white;
+}
+.Follow:hover{
+    background-color: rgb(24, 103, 187);
+    color: white;
+}
+.Unfollow{
+    background-color: #dc3545;
+    color: white;
+}
+.Unfollow:hover{
+    color: white;
+    background-color: #b00415;
+}
+
+/* Like */
+/* for icon */
+.heart,.heart:hover{
+    color: red;
+}
