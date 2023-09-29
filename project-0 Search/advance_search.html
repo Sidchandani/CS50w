@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Search</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="right">
+            <button onclick="window.location.href='index.html';" class="srcbtn">Google Search</button>
+        </div>
+
+        <div >
+            <div>
+                <img  class="adv-img" src="cs50.png" alt="cs50 image">
+            </div>
+
+            <div>
+                <p id="adv-src">Advanced Search</p>
+            </div>
+
+            <div id="line"></div>
+
+            <div id="findpg">
+                <span>Find pages with..</span>
+                <span class="bold mr-11">To do this in the search box.</span>
+            </div>
+
+            <div class="">
+                <span class="f-30 mx-6 ">all these words:</span>
+                <input class="mx-4 srcbar2 " type="text" id="as_q" >
+                <span class="f-30 mx-7">Type the important words: </span>
+                <span class="imp" >tri-colour rat terrier</span>
+                
+            </div>
+            <div class="">
+                <span class="f-30 mx-6 ">this exact word or phrase:</span> 
+                <input class="mx-5 srcbar2" type="text" id="as_epq" >
+                <span class="f-30 mx-7">Put exact words in quotes: </span>
+                <span class="imp" >"rat terrier"</span>
+
+            </div>
+            <div class="">
+                <span class="f-30 mx-6 ">any of these words: </span>
+                <input class="mx-6 srcbar2" type="text" id="as_oq" >                
+                <span class="f-30 mx-7">Type OR between all the words you want: </span>
+                <span class="imp" >miniature OR standard</span>
+
+            </div>
+            <div class="">
+                <span class="f-30 mx-6 ">none of these words:</span> 
+                <input class="mx-6 srcbar2" type="text" id="as_eq" >
+                <span class="f-30 mx-7">Put a minus sign just before words that you don't want: </span>
+                <span class="imp" >-rodent, -"Jack Russell"</span>
+
+            </div>
+            <div class="center">
+                <button class="srcbtn2 my-2" onclick="adv_search()">Advanced Search</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+</body>
+<script>
+    function adv_search(){
+        var as_q=document.getElementById("as_q").value;
+        var as_epq=document.getElementById("as_epq").value;
+        var as_oq=document.getElementById("as_oq").value;
+        var as_eq=document.getElementById("as_eq").value;
+
+        let text = "";
+        let res = "";
+        for (i of as_oq) {
+        if (i==" "){
+        res+=text+"+";
+        text="";
+        }
+        else{
+        text += i;}
+        }
+        res+=text;
+        
+
+        let s='https://www.google.com/search?as_q='+as_q+'&as_epq='+as_epq+'&as_oq='+res+'&as_eq='+as_eq;
+        // s='https://www.google.com/search?as_q='+as_q;
+        location.replace(s);
+    }
+</script>
+</html>

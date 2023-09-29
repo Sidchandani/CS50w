@@ -1,0 +1,145 @@
+.srcbtn:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.container{
+    height: 1400px;
+    width: 100%;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+} 
+
+.srcbar{
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 54px;
+    height: 85px;
+    width: 1113px;
+    padding-left: 17px;
+    font-size: 44px;
+    margin-bottom: 55px;
+    margin-top: 70px;
+}
+.srcbar2{
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    height: 51px;
+    width: 948px;
+    font-size: 30px;
+    margin-top: 50px;
+}
+.srcbtn{
+    background-color: rgb(248, 249, 250);
+    color: rgb(60, 64, 70);
+    border: 1px solid rgb(248, 249, 250);
+    border-radius: 4px;
+    font-size: 27px;
+    height: 66px;
+    width: 243px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.srcbtn2{
+    border: 1px solid #3079ed;
+    background: #4d90fe;
+    color: white;
+    border-radius: 4px;
+    font-size: 27px;
+    height: 65px;
+    width: 249px;
+    cursor: pointer;
+}
+.right{
+    position: absolute;
+    right: 20px;
+    margin-top: 48px;
+    margin-right: 30px;
+}
+
+.main-img{
+    height: 171px;
+    width: 568px;
+    margin-top: 432px;
+}
+.adv-img{
+    height: 52px;
+    width: 170px;
+    margin: 27px;
+}
+
+.query{
+    font-size: 39px;
+    font: bold;
+}
+.mx-2{
+    margin: 20px;
+    margin-top: 550px;
+}
+.mx-3{
+    margin: 20px;
+}
+.my-2{
+    margin-top: 71px;
+}
+.txt-align{
+    text-align: center;
+}
+
+.f-30{
+    font-size: 30px;
+}
+.mx-4{
+    margin-left: 176px;
+}
+.mx-5{
+    margin-left: 58px;
+}
+.mx-6{
+    margin-left: 135px;
+}
+.mx-7{
+    margin-left: 25px;
+}
+.bold{
+    font-weight: 700;
+    color: #777;
+}
+.mr-11{
+    
+    position: absolute;
+    right: 1140px;
+}
+.mt-11{
+    top: 1140px;
+}
+.imp{
+    color: #666;
+    font-family: monospace;
+    font-size: 24px;
+    white-space: pre;
+}
+
+
+#adv-src{
+    margin: 50px;
+    margin-left: 94px;
+    font-size: 44px;
+    color: #d93025;
+}
+#line{
+    border-bottom: 1px solid #ebebeb;
+}
+#findpg{
+    margin-top:85px;
+    margin-left:135px;
+    font-size: 35px;
+
+}

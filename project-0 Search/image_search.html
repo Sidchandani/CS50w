@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Image Search</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="right">
+                <button onclick="window.location.href='index.html';" class="srcbtn">Google Search</button>
+            </div>
+
+            <div class="center">
+                <img class="main-img" src="cs50.png" alt="cs50 image">
+            </div>
+
+            <!-- <div class="center"> -->
+                <div class="center">
+                    <!--  <span class="query mx-2">Query:</span>  -->
+                    <input class="srcbar " type="text" id="q" placeholder="Enter Image Query...">
+                </div>
+                <div class="center">
+                    <button class="srcbtn " onclick="imgsearch()">Search</button>
+                </div> 
+            <!-- </div> -->
+
+        </div>
+
+    </body>
+    <script>
+        function imgsearch() {
+        var x = document.getElementById("q").value;
+        
+        s='https://www.google.com/search?q='
+        s=s.concat(x);
+        s=s.concat('&tbm=isch');
+        
+        location.replace(s);
+        }
+        </script>
+</html>
