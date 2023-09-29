@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block heading %} {{heading}} {% endblock %}
+
+{% block body %}
+
+    {% if message %}
+    <p style="margin:0px;"><strong>''{{message}}''</strong> </p>
+    {% endif %}
+
+    {% for product in products %}
+    <a href="{% url 'quick_view' product.product_id %}" class="text-decoration-none text-dark"> <div class=" row border border-secondary mx-1 my-2">
+        <div class="col-4 my-2">
+           <img src="{{product.image}}" alt="{{product.product_name}}" style="width: 350px;height: 227px;"> 
+        </div>
+        <div class="col-8 my-2">
+            <h5><strong>{{product.product_name}}</strong></h5>
+            <h5><strong>Starting Price :</strong>  ${{product.price}}</h5>
+            <h5>{{product.desc}}</h5>
+            <h6>Created on {{product.pub_date}}</h6>
+        </div>
+
+    </div></a>
+    {% empty %}
+    <h4 class="my-4 mx-2">Nothing To Show..</h4>
+    {% endfor %}
+{% endblock %}

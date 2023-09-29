@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+   
+
+    <h2>Create Listings</h2>
+
+    <form action="{% url 'create' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="FormControlInput1" class="form-label">Enter Title</label>
+            <input type="text" name="title" class="form-control" id="FormControlInput1" >
+        </div>
+        <div class="mb-3">
+            <label for="FormControlTextarea1" class="form-label">Enter Desc.</label>
+            <textarea name="desc" class="form-control" id="FormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="FormControlInput2" class="form-label">Enter Category</label>
+            <input type="text" name="category" class="form-control" id="FormControlInput2" >
+        </div><div class="mb-3">
+            <label for="FormControlInput3" class="form-label">Enter Price</label>
+            <input type="number" name="price" class="form-control" id="FormControlInput3" >
+        </div><div class="mb-3">
+            <label for="FormControlInput4" class="form-label">Enter Image URL</label>
+            <input type="text" name="image" class="form-control" id="FormControlInput4" >
+        </div>
+        <input type="submit" value="Create">
+    </form>
+            
+    
+        
+{% endblock %}

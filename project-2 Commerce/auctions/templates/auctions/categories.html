@@ -1,0 +1,13 @@
+{% extends "auctions/layout.html" %}
+
+{% block heading %} List of Categories {% endblock %}
+
+{% block body %}
+
+    {% for cat in cats %}
+    <li><a href="{% url 'show_cat' cat %}">{{cat}}</a></li>
+
+    {% empty %}
+    <h4 class="my-4 mx-2">Nothing To Show..</h4>
+    {% endfor %}
+{% endblock %}
