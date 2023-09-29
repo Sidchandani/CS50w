@@ -1,0 +1,25 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+
+    {% if entry %}
+        <div id="markdown-content">{{entry}}</div>
+        <a href="{{title}}/edit">Edit Page</a>
+    {% else %}
+    <h1>Error 404! Page not found. </h1>
+    {% endif %}
+
+{% endblock %}
+{% block js %}
+<script>
+    var markdownText = document.getElementById('markdown-content').innerHTML;
+
+    var md = window.markdownit();
+    var html = md.render(markdownText);
+    document.getElementById('markdown-content').innerHTML = html;
+</script>
+{% endblock %}
