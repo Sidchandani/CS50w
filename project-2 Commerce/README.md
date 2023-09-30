@@ -25,7 +25,6 @@ python manage.py runserver
 ```
 
 ## Demo
-![image](https://user-images.githubusercontent.com/92586852/213959465-8bdca7bd-ce89-461b-af78-58b003cc6152.png)
-
+![image](https://github-production-user-asset-6210df.s3.amazonaws.com/105474063/271746319-32fea71f-a639-4e94-b522-9f4601461dc8.png)
 ## Note on academic honesty
 If you're taking CS50W, either through [Harvard Extension School](https://extension.harvard.edu/), [Harvard Summer School](https://summer.harvard.edu/) or [OpenCourseWare](https://cs50.harvard.edu/web/), please do not blindly copy paste my code. You are putting yourself at a huge risk for getting excluded from the course by the staff themselves as they grade each project thoroughly. This is a course offered by Harvard, and you will be put up to their standard.
